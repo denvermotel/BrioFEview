@@ -1,0 +1,262 @@
+/* Tema chiaro BrioFEview - avorio/grafite/teal (colore del logo).
+   Applicato all'intera app (QApplication.setStyleSheet). */
+
+* { font-family: "Segoe UI", "Inter", "Helvetica Neue", sans-serif; }
+
+QMainWindow, QDialog { background: #F5F4EE; }
+QWidget { color: #2A2825; font-size: 13px; }
+
+/* ---- Toolbar ---- */
+QToolBar {
+    background: #F5F4EE;
+    border: none;
+    border-bottom: 1px solid #E3E1D9;
+    padding: 7px 10px;
+    spacing: 3px;
+}
+QToolBar::separator {
+    background: #E3E1D9;
+    width: 1px;
+    margin: 5px 8px;
+}
+QToolButton {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 6px 11px;
+    color: #3A3833;
+}
+QToolButton:hover { background: #ECEAE1; }
+QToolButton:pressed { background: #E3E1D9; }
+QToolButton:checked {
+    background: #0E9C8C;
+    color: #FFFFFF;
+    border-color: #0E9C8C;
+}
+QToolButton:checked:hover { background: #0B7A6E; }
+
+/* ---- Barra di stato ---- */
+QStatusBar {
+    background: #F5F4EE;
+    border-top: 1px solid #E3E1D9;
+    color: #78746C;
+}
+QStatusBar::item { border: none; }
+
+/* ---- Splitter ---- */
+QSplitter::handle { background: #E3E1D9; }
+QSplitter::handle:horizontal { width: 1px; }
+
+/* ---- Barra laterale (intestazione + elenco fatture) ---- */
+QWidget#sidebarHeader {
+    background: #F0EEE6;
+    border-right: 1px solid #E3E1D9;
+    border-bottom: 1px solid #E3E1D9;
+}
+QLabel#sidebarTitle {
+    color: #8A857B;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+QToolButton#sidebarClose {
+    border: none;
+    background: transparent;
+    color: #8A857B;
+    font-size: 14px;
+    padding: 2px 7px;
+    border-radius: 6px;
+}
+QToolButton#sidebarClose:hover { background: #D9F0EB; color: #0E9C8C; }
+
+QListWidget {
+    background: #FBFAF6;
+    border: none;
+    border-right: 1px solid #E3E1D9;
+    outline: 0;
+    padding: 6px;
+}
+QListWidget::item {
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin: 1px 2px;
+    color: #3A3833;
+}
+QListWidget::item:hover { background: #EFEDE4; }
+QListWidget::item:selected { background: #D9F0EB; color: #2A2825; }
+
+/* ---- Etichette e riquadri ---- */
+QLabel { color: #2A2825; background: transparent; }
+QGroupBox {
+    border: 1px solid #E3E1D9;
+    border-radius: 10px;
+    margin-top: 16px;
+    padding: 14px 12px 12px 12px;
+    background: #FBFAF6;
+    font-weight: 600;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 12px;
+    padding: 0 5px;
+    color: #78746C;
+}
+
+/* ---- Pulsanti ---- */
+QPushButton {
+    background: #FFFFFF;
+    border: 1px solid #DCDACF;
+    border-radius: 8px;
+    padding: 7px 15px;
+    color: #2A2825;
+}
+QPushButton:hover { background: #F3F1E9; }
+QPushButton:pressed { background: #E9E6DC; }
+QPushButton:default, QPushButton:focus {
+    background: #0E9C8C;
+    border-color: #0E9C8C;
+    color: #FFFFFF;
+}
+QPushButton:default:hover { background: #0B7A6E; }
+QPushButton:disabled { color: #A8A49B; background: #F1EFE8; border-color: #E7E4DA; }
+
+/* ---- Campi ---- */
+QComboBox, QLineEdit {
+    background: #FFFFFF;
+    border: 1px solid #DCDACF;
+    border-radius: 8px;
+    padding: 6px 10px;
+    selection-background-color: #0E9C8C;
+    selection-color: #FFFFFF;
+}
+QComboBox:focus, QLineEdit:focus { border-color: #0E9C8C; }
+QComboBox::drop-down { border: none; width: 22px; }
+QComboBox QAbstractItemView {
+    background: #FFFFFF;
+    border: 1px solid #DCDACF;
+    border-radius: 8px;
+    selection-background-color: #D9F0EB;
+    selection-color: #2A2825;
+    outline: 0;
+    padding: 4px;
+}
+
+/* ---- Check / radio ----
+   Applicando un QSS ai QCheckBox, Qt smette di disegnare l'indicatore nativo:
+   va fornito esplicitamente. Le immagini sono generate a runtime (icons.py)
+   e @ICONS@ viene sostituito con la loro cartella in __main__. */
+QCheckBox, QRadioButton { spacing: 9px; color: #2A2825; background: transparent; }
+QCheckBox::indicator, QRadioButton::indicator { width: 18px; height: 18px; }
+QCheckBox::indicator:unchecked { image: url("@ICONS@/check_off.png"); }
+QCheckBox::indicator:checked { image: url("@ICONS@/check_on.png"); }
+QRadioButton::indicator:unchecked { image: url("@ICONS@/radio_off.png"); }
+QRadioButton::indicator:checked { image: url("@ICONS@/radio_on.png"); }
+
+/* ---- Progress bar ---- */
+QProgressBar {
+    background: #EFEDE4;
+    border: none;
+    border-radius: 6px;
+    min-height: 8px;
+    text-align: center;
+    color: #78746C;
+}
+QProgressBar::chunk { background: #0E9C8C; border-radius: 6px; }
+
+/* ---- Log / testo ---- */
+QTextEdit {
+    background: #FFFFFF;
+    border: 1px solid #E3E1D9;
+    border-radius: 8px;
+}
+
+/* ---- Tooltip ---- */
+QToolTip {
+    background: #2A2825;
+    color: #F5F4EE;
+    border: none;
+    padding: 5px 9px;
+    border-radius: 6px;
+}
+
+/* ---- Menu (contestuale del visualizzatore + tendine) ----
+   Forzati chiari così restano leggibili anche con Windows in modalità scura. */
+QMenu {
+    background: #FFFFFF;
+    border: 1px solid #DCDACF;
+    border-radius: 8px;
+    padding: 5px;
+}
+QMenu::item {
+    padding: 6px 22px 6px 14px;
+    border-radius: 6px;
+    color: #2A2825;
+}
+QMenu::item:selected { background: #D9F0EB; color: #2A2825; }
+QMenu::item:disabled { color: #B0AB9F; }
+QMenu::separator { height: 1px; background: #E3E1D9; margin: 5px 8px; }
+QMenu::indicator { width: 16px; height: 16px; }
+
+/* pulsante-menu della vista: indicatore a discesa */
+QToolButton::menu-indicator {
+    subcontrol-origin: padding;
+    subcontrol-position: right center;
+    right: 6px;
+}
+
+/* ---- Barre di scorrimento ---- */
+QScrollBar:vertical {
+    background: #F0EEE6;
+    width: 12px;
+    margin: 0;
+    border: none;
+}
+QScrollBar:horizontal {
+    background: #F0EEE6;
+    height: 12px;
+    margin: 0;
+    border: none;
+}
+QScrollBar::handle:vertical {
+    background: #CFCBBF;
+    min-height: 30px;
+    border-radius: 6px;
+    margin: 2px;
+}
+QScrollBar::handle:horizontal {
+    background: #CFCBBF;
+    min-width: 30px;
+    border-radius: 6px;
+    margin: 2px;
+}
+QScrollBar::handle:hover { background: #BDB8AA; }
+QScrollBar::add-line, QScrollBar::sub-line { width: 0; height: 0; background: none; border: none; }
+QScrollBar::add-page, QScrollBar::sub-page { background: none; }
+
+/* ---- Overlay zoom sulla fattura ---- */
+QFrame#zoomOverlay {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #DCDACF;
+    border-radius: 11px;
+}
+QToolButton#zoomBtn {
+    border: none;
+    background: transparent;
+    color: #3A3833;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 7px;
+}
+QToolButton#zoomBtn:hover { background: #ECEAE1; }
+QToolButton#zoomBtn:pressed { background: #E3E1D9; }
+QToolButton#zoomLabel {
+    border: none;
+    background: transparent;
+    color: #6B6862;
+    font-size: 12px;
+    padding: 3px 4px;
+    min-width: 46px;
+}
+QToolButton#zoomLabel:hover { color: #0E9C8C; }

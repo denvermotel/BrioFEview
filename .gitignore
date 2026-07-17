@@ -1,0 +1,22 @@
+# Build PyInstaller (rigenerabili con i comandi in packaging/ e README.md)
+build/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Materiale di riferimento e fixture/script di test: non necessari
+# per il funzionamento dell'app (i fogli di stile usati a runtime sono
+# in visualizzatore/resources/xsl/), esclusi dal repository pubblico
+_documentazione/
+test_data/
+
+# Note di lavoro per la ripresa a freddo tra sessioni (non per il repository pubblico)
+memory.md
+
+# OS
+.DS_Store
+Thumbs.db
