@@ -14,8 +14,9 @@ __pycache__/
 _documentazione/
 test_data/
 
-# Note di lavoro per la ripresa a freddo tra sessioni (non per il repository pubblico)
+# Note di lavoro personali (non per il repository pubblico)
 memory.md
+design.md
 
 # OS
 .DS_Store
