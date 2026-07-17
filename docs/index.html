@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STA FUNZIONANDO!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #050505;
+            background-image: 
+                linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 4px, 6px 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 8rem;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 4px;
+            position: relative;
+            
+            /* Gradiente Tamarro */
+            background: linear-gradient(180deg, #ff007f 0%, #7000ff 50%, #00ffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            /* Ombre neon incrociate */
+            filter: drop-shadow(5px 5px 0px #000) drop-shadow(-3px -3px 0px #ff0055);
+            
+            /* Animazioni */
+            animation: pulse 0.8s ease-in-out infinite alternate, shake 0.3s infinite;
+        }
+
+        /* Effetto Strobo/Pulse */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                filter: drop-shadow(5px 5px 0px #000) drop-shadow(-3px -3px 0px #ff0055) brightness(1);
+            }
+            100% {
+                transform: scale(1.05);
+                filter: drop-shadow(8px 8px 0px #000) drop-shadow(-5px -5px 15px #00ffff) brightness(1.3);
+            }
+        }
+
+        /* Vibrazione tamarra stile sub-woofer al massimo */
+        @keyframes shake {
+            0% { left: 0px; top: 0px; }
+            20% { left: -2px; top: 1px; }
+            40% { left: 1px; top: -1px; }
+            60% { left: -1px; top: 1px; }
+            80% { left: 2px; top: 1px; }
+            100% { left: 0px; top: -1px; }
+        }
+
+        /* Sfondo tamarro extra: linee laser rotanti */
+        .laser-bg {
+            position: absolute;
+            width: 200vw;
+            height: 200vh;
+            background: repeating-conic-gradient(from 0deg, transparent 0deg 10deg, rgba(255, 0, 128, 0.03) 10deg 20deg);
+            animation: spin 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="laser-bg"></div>
+
+    <div class="container">
+        <h1>STA FUNZIONANDO</h1>
+    </div>
+
+</body>
+</html>
